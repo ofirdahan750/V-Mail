@@ -1,4 +1,4 @@
-import appHeader from './cmps/app-header.cmp.js'
+import appHeader from './cmps/app-header.cmp.js';
 import { myRouter } from './routes.js';
 const options = {
     el: '#app',
