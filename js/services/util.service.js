@@ -4,11 +4,11 @@ export const utilService = {
     makeId,
     makeName,
     makeTitle,
-    makeYear,
-    makeMouth,
-    makeDay,
-    makeHour,
-    makeMin,
+    randomDataYear,
+    randomDataMouth,
+    randomDataDay,
+    randomDataHour,
+    randomDataMin,
     makeTxt,
 }
 
@@ -40,26 +40,26 @@ function makeTitle() {
     return possble[Math.floor(Math.random() * possble.length)]
 }
 
-function makeYear() {
+function randomDataYear() {
     var possble = [2020,2019,2018,2017]
     return possble[Math.floor(Math.random() * possble.length)]
 }
 
-function makeMouth() {
+function randomDataMouth() {
     var possble = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12]
     return possble[Math.floor(Math.random() * possble.length)]
 }
 
-function makeDay() {
-    var possble = [01 , 02 , 03 , 04 , 05 , 06 , 07 , 08 , 09 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21 , 22 , 23 , 24 , 25 , 26 , 27 , 28]
+function randomDataDay() {
+    var possble = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21 , 22 , 23 , 24 , 25 , 26 , 27 , 28]
     return possble[Math.floor(Math.random() * possble.length)]
 }
 
-function makeHour() {
-    var possble = [01 , 02 , 03 , 04 , 05 , 06 , 07 , 08 , 09 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21 , 22 , 23]
+function randomDataHour() {
+    var possble = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21 , 22 , 23]
     return possble[Math.floor(Math.random() * possble.length)]
 }
-function makeMin() {
+function randomDataMin() {
     var possble = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21 , 22 , 23 , 24 , 25 , 26 , 27 , 28 , 29 , 30 , 31 , 32 , 33 , 34 , 35 , 36 , 37 , 38 , 39 , 40 , 41 , 42 , 43 , 44 , 45 , 46 , 47 , 48 , 49 , 50 , 51 , 52 , 53 , 54 , 55 , 56 , 57 , 58 , 59]
     return possble[Math.floor(Math.random() * possble.length)]
 }
