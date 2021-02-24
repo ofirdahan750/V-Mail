@@ -4,9 +4,11 @@ const options = {
     el: '#app',
     router: myRouter,
     template: `
-    <div>
-        <app-header></app-header>
-    </div>
+    <section>
+        <app-header/>
+        <router-view/>
+        <footer><p> &copy; Coffeerights 2021</p></footer>
+    </section>
     `,
     components: {
         appHeader
