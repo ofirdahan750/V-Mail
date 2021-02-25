@@ -7,7 +7,7 @@ font-face {
 
 html {
     /* font-family: Poppins-Regular, sans-serif; */
-    color: #626262;
+    color: #a3a2a2;
     line-height: 1.25;
     background-color: #22252c;
     scroll-behavior: smooth;
@@ -50,6 +50,13 @@ button:hover {
 footer {
     position: absolute;
     bottom:0px;
+}
+/* email */
+.email-read {
+    background:  rgb(66, 66, 71);
+}
+.email-unread {
+    background: rgb(84, 86, 99);
 }
 /* helper* */
 
