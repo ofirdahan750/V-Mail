@@ -9,7 +9,8 @@ export const emailService = {
     getEmptyMail,
     remove,
     getById,
-    save
+    save,
+    post
 }
 
 function remove(emailId) {
@@ -24,6 +25,7 @@ function getById(id) {
 function query() {
     return storageService.query(EMAIL_KEY)
 }
+
 
 
 function _createEmails() {
@@ -45,7 +47,8 @@ function _createEmails() {
                 'day': utilService.randomDataDay(),
                 'hour': utilService.randomDataHour(),
                 'min': utilService.randomDataMin(),
-                'isRead': false//IS THE MAIL READ
+                'isRead': false,//IS THE MAIL READ,
+                'isOpen':false
             }
 
 
@@ -59,6 +62,11 @@ function _createEmails() {
 function save(email) {
     return storageService.put(EMAIL_KEY, email)
 }
+function post(email) {
+    return storageService.post(EMAIL_KEY, email)
+
+}
+
 
 function getEmptyMail() {
     return {
@@ -71,6 +79,7 @@ function getEmptyMail() {
         'day': new Date().getUTCHours() + 2,
         'hour': utilService.randomDataHour,
         'min': new Date().getUTCMinutes(),
-        'isRead': true//IS THE MAIL READ
+        'isRead': true,//IS THE MAIL READ
+        'isOpen':false
     }
 }

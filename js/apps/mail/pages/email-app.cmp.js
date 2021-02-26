@@ -9,7 +9,7 @@ export default {
         <h1>welcome to P-mail</h1>
         <email-status :emails="emails"/>
         <email-fliter/>
-        <email-list v-if="emails.length" :emails="emails" @remove="removeEmail"  @read="markAsReadEmail"/>
+        <email-list v-if="emails.length" :emails="emails" @remove="removeEmail" @read="markAsReadEmail" @openCurrMail="toggleEmailOpen" />
         
         
 
@@ -34,12 +34,19 @@ export default {
             const idx = (email) => email.id === emailId
             const foundMail = this.emails.findIndex(idx)
             this.emails[foundMail].isRead = !this.emails[foundMail].isRead
-            emailService.save( this.emails[foundMail]).then(this.loadEmails)
-
+            emailService.save(this.emails[foundMail]).then(this.loadEmails)
+        },
+        toggleEmailOpen(emailId) {
+            const idx = (email) => email.id === emailId
+            const foundMail = this.emails.findIndex(idx)
+            this.emails[foundMail].isOpen = !this.emails[foundMail].isOpen
+            emailService.save(this.emails[foundMail]).then(this.loadEmails)
+            
         }
-    }
-    ,
-    created() {
+
+    },
+
+    mounted() {
         this.loadEmails()
     },
     components: {

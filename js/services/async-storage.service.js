@@ -31,7 +31,7 @@ function post(entityType, newEntity) {
 function postMany(entityType, newEntities) {
     return query(entityType)
         .then(entities => {
-            entities.push(...newEntities);
+            entities.unshift(...newEntities);
             _save(entityType, entities)
             return entities;
         })
