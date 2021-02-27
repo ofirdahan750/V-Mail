@@ -77,8 +77,8 @@ function getEmptyMail() {
         'text': '', //txt body
         'year': new Date().getUTCFullYear(),//to-min random time unit
         'mouth': new Date().getUTCMonth() + 1,
-        'day': new Date().getUTCHours() + 2,
-        'hour': utilService.randomDataHour,
+        'day': new Date().getUTCDate(),
+        'hour': new Date().getHours(),
         'min': new Date().getUTCMinutes(),
         'isRead': true,//IS THE MAIL READ
         'isOpen':false,

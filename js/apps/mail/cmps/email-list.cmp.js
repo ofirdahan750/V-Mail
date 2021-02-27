@@ -4,10 +4,10 @@ export default {
     props: ['emails'],
     template: `
     
-<ul v-if =emails.length>
-    <li v-for="email in emails" :key="email.id" :class="{'email-read':!email.isRead,'email-unread':email.isRead}">
+<ul v-if ="emails.length">
+    <li v-for="email in emails"  :key="email.id" :class="{'email-read':!email.isRead,'email-unread':email.isRead}">
         <email-preview  v-if="!email.isOpen" @click.native="openCurrMail(email.isRead,email.id)":email="email"/>
-    <email-details v-else="email.isOpen" :email="email" @click.native="openCurrMail(email.isRead,email.id)"/>
+    <email-details v-else :email="email" @click.native="openCurrMail(email.isRead,email.id)"/>
         <button @click="read(email.id)">read</button>
     <button @click="remove(email.id)">delete</button>
     <button> <router-link :to="'/email/compose/'+email.id">Re</router-link></button>
@@ -15,23 +15,18 @@ export default {
 </ul>
 <h1 v-else>No email to show...</h1>
     `,
-    // data() {
-    //     return {
-    //         isRead:false
-    //     }
-    // },
     methods: {
         read(emailId) {
-            this.$emit('read',emailId)
+            this.$emit('read', emailId)
         },
         remove(emailId) {
             this.$emit('remove', emailId)
         },
-        openCurrMail(emailIsRead,emailId) {
-       if(!emailIsRead) {
-        this.$emit('read',emailId)
-       }
-       this.$emit('openCurrMail', emailId)
+        openCurrMail(emailIsRead, emailId) {
+            if (!emailIsRead) {
+                this.$emit('read', emailId)
+            }
+            this.$emit('openCurrMail', emailId)
 
         }
     },
@@ -39,4 +34,4 @@ export default {
         emailPreview,
         emailDetails
     },
-    }
+}

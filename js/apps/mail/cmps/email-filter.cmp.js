@@ -1,24 +1,33 @@
 export default {
     template: `
     <section>
-    <input placeholder = "search mail..." v-model="filterEmail" @keydown="setFliter"/>
-    <label for="emailFliter">Fliter by:
-    <select>
-    <option>ALL</option>
-<option value="read">READ</option>
-<option value="unread">UNREAD</option>
+    <form  @keyup.prevent="setFilter">
+    <input placeholder = "search mail..." v-model="filterEmail.txtInput"/>
+    </form>
+    <label> Filter Email:
+    <select v-model="filterEmail.filterInbox"  @change="setFilter">
+    <option value="all" selected>ALL</option>
+    <option value="unread">UNREAD</option>
+    <option value="read">READ</option>
     </select>
     </label>
+    
 </section>
 `,
 data() {
     return {
-        filterEmail:''
+        filterEmail: {
+            txtInput:'',
+            filterInbox: 'all'
+        }
     }
 },
 methods: {
-    setFliter() {
-        console.log('filterEmail:',this.filterEmail)
+    setFilter() {
+        setTimeout(() => {
+            this.$emit('filter',this.filterEmail)
+        }, 500);
+        
     }
  }
 }

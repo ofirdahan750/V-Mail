@@ -26,6 +26,11 @@ export default {
             ${this.emailToCompose.text}`
         },
         send() {
+            this.emailToCompose.isInbox = false
+            this.emailToCompose.year = new Date().getUTCFullYear()
+            this.emailToCompose.mouth = (new Date().getUTCMonth()+1 <= 9)? `0${new Date().getUTCMonth() + 1}` : new Date().getUTCMonth() + 1
+            this.emailToCompose.hour = (new Date().getHours() <= 9)? `0${new Date().getHours()}` : new Date().getHours()
+            this.emailToCompose.min = (new Date().getUTCMinutes() <= 9)? `0${new Date().getUTCMinutes()}` : new Date().getUTCMinutes()
             emailService.post(this.emailToCompose)
             .then(email => {
                 const msg = {
