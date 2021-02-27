@@ -1,17 +1,26 @@
 export default {
     template: `
     <section>
-    <input placeholder = "search mail..."/>
+    <input placeholder = "search mail..." v-model="filterEmail" @keydown="setFliter"/>
     <label for="emailFliter">Fliter by:
     <select>
     <option>ALL</option>
 <option value="read">READ</option>
 <option value="unread">UNREAD</option>
     </select>
-
     </label>
 </section>
-`
+`,
+data() {
+    return {
+        filterEmail:''
+    }
+},
+methods: {
+    setFliter() {
+        console.log('filterEmail:',this.filterEmail)
+    }
+ }
 }
 
 

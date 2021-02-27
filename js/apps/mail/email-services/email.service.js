@@ -48,7 +48,8 @@ function _createEmails() {
                 'hour': utilService.randomDataHour(),
                 'min': utilService.randomDataMin(),
                 'isRead': false,//IS THE MAIL READ,
-                'isOpen':false
+                'isOpen':false,
+                'isInbox':true
             }
 
 
@@ -80,6 +81,7 @@ function getEmptyMail() {
         'hour': utilService.randomDataHour,
         'min': new Date().getUTCMinutes(),
         'isRead': true,//IS THE MAIL READ
-        'isOpen':false
+        'isOpen':false,
+        'isInbox':false
     }
 }

@@ -3,7 +3,8 @@ import emailDetails from './email-details.cmp.js'
 export default {
     props: ['emails'],
     template: `
-<ul>
+    
+<ul v-if =emails.length>
     <li v-for="email in emails" :key="email.id" :class="{'email-read':!email.isRead,'email-unread':email.isRead}">
         <email-preview  v-if="!email.isOpen" @click.native="openCurrMail(email.isRead,email.id)":email="email"/>
     <email-details v-else="email.isOpen" :email="email" @click.native="openCurrMail(email.isRead,email.id)"/>
@@ -12,6 +13,7 @@ export default {
     <button> <router-link :to="'/email/compose/'+email.id">Re</router-link></button>
     </li>
 </ul>
+<h1 v-else>No email to show...</h1>
     `,
     // data() {
     //     return {
