@@ -3,8 +3,14 @@ export default {
     template: `
     <section>
         
-    {{email.from}} ||{{email.title}} || {{this.email.hour}}:{{this.email.min}}
+    {{email.from}} ||{{titleTrim}} || {{this.email.hour}}:{{this.email.min}}
     </section>
-    `
-    
+    `,
+    computed: {
+        titleTrim() {
+        const titleTrim = this.email.title
+        return  titleTrim.substring(0, 9) + '...'
+        }
+    }
+
 }

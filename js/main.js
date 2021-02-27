@@ -9,7 +9,7 @@ const options = {
         <app-header/>
         <user-msg/>
         <router-view/>
-        <footer><p> &copy; Coffeerights 2021</p></footer>
+        <footer> &copy; Coffeerights 2021</footer>
     </section>
     `,
 

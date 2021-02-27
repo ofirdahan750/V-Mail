@@ -24,10 +24,7 @@ data() {
 },
 methods: {
     setFilter() {
-        setTimeout(() => {
             this.$emit('filter',this.filterEmail)
-        }, 500);
-        
     }
  }
 }

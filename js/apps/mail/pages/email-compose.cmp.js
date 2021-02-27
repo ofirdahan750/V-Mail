@@ -5,7 +5,7 @@ export default {
     template: `
      <section v-if="emailToCompose">
          <h1>Email Compose!</h1>
-         <input type="text" Placeholder="To:" v-model="emailToCompose.from"/> 
+         <input type="text" Placeholder="To:" v-model="emailToCompose.from" /> 
              <input type="text" Placeholder="Title" v-model="emailToCompose.title"/> 
        <textarea rows="18" cols="50" placeholder="email text" v-model="emailToCompose.text"></textarea>
        <button @click="send">send</button>
@@ -26,6 +26,7 @@ export default {
             ${this.emailToCompose.text}`
         },
         send() {
+            this.emailToCompose.isRead = false
             this.emailToCompose.isInbox = false
             this.emailToCompose.year = new Date().getUTCFullYear()
             this.emailToCompose.mouth = (new Date().getUTCMonth()+1 <= 9)? `0${new Date().getUTCMonth() + 1}` : new Date().getUTCMonth() + 1

@@ -73,7 +73,7 @@ export default {
             if (this.filterBy.filterInbox === 'unread') return filterEmail.filter(email => !email.isRead && (this.inboxOrSend) ? email.isinbox : !email.isInbox)
         },
         countingRead() {
-            let allReadedEmail = this.emails.filter(email => email.isRead)
+            let allReadedEmail = this.emails.filter(email => !email.isRead)
             let res = allReadedEmail.length / this.emails.length * 100
             return res.toFixed(2)
         }
