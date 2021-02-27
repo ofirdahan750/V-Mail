@@ -8,10 +8,10 @@ export default {
     template: `
      <section class="email-app">
         <h1>welcome to P-mail</h1>
-        <email-status :countingRead="countingRead" @setmail="setMail"/>
+        <email-status :countingRead="countingRead" />
         <email-filter @filter="setFilter"/>
         <email-list :emails="showEmail" @remove="removeEmail" @read="markAsReadEmail" @openCurrMail="toggleEmailOpen" />
-        <email-btn/>
+        <email-btn @setmail="setMail"/>
 
     </section>
     `
@@ -54,7 +54,8 @@ export default {
             this.filterBy = filterEmail
         },
         setMail(val) {
-            (val === 'inbox') ? this.inboxOrSend : !this.inboxOrSend
+          (val === 'inbox') ? this.inboxOrSend ===true : !this.inboxOrSend 
+            this.showEmail()
         }
         
 
@@ -79,6 +80,7 @@ export default {
 
 
     mounted() {
+        this.inboxOrSend = true
         this.loadEmails()
     },
 
