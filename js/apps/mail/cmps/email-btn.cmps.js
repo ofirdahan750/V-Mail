@@ -2,8 +2,8 @@ export default {
     template: `
     <section>
     <button> <router-link :to="'/email/compose/'">compose</router-link></button>
-    <div @click="fliterInbox('inbox')">inbox</div>
-    <div @click="fliterInbox('read')">read</div>
+    <button @click="fliterInbox('inbox')">inbox</button>
+    <button @click="fliterInbox('read')">read</button>
     
     
     </section>

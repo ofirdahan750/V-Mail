@@ -23,7 +23,7 @@ export default {
                 txtInput: '',
                 filterInbox: 'all'
             },
-            inboxOrSend: null,
+            inboxOrSend: 'inbox',
             counting: 0
         }
     },
@@ -54,15 +54,16 @@ export default {
             this.filterBy = filterEmail
         },
         setMail(val) {
-          (val === 'inbox') ? this.inboxOrSend ===true : !this.inboxOrSend 
-            this.showEmail()
+            return this.inboxOrSend = val
+            //  return 
+
         }
-        
+
 
     },
     computed: {
         showEmail() {
-            if (!this.filterBy.txtInput && this.filterBy.filterInbox === 'all') return this.emails.filter(email => (this.inboxOrSend) ? email.isInbox : !email.isInbox)
+            if (!this.filterBy.txtInput && this.filterBy.filterInbox === 'all') return this.emails.filter(email => (this.inboxOrSend === 'inbox') ? email.isInbox : !email.isInbox)
             let filterEmail = this.emails.filter(email =>
                 email.title.toLowerCase().includes(this.filterBy.txtInput.toLowerCase()) ||
                 email.text.toLowerCase().includes(this.filterBy.txtInput.toLowerCase())
@@ -73,14 +74,13 @@ export default {
         },
         countingRead() {
             let allReadedEmail = this.emails.filter(email => !email.isRead)
-           let res = allReadedEmail.length / this.emails.length * 100
+            let res = allReadedEmail.length / this.emails.length * 100
             return res.toFixed(2)
         }
     },
 
 
     mounted() {
-        this.inboxOrSend = true
         this.loadEmails()
     },
 
