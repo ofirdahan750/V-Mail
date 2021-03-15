@@ -3,7 +3,7 @@ export default {
     <section>
     <button> <router-link :to="'/email/compose/'">compose</router-link></button>
     <button @click="fliterInbox('inbox')">inbox</button>
-    <button @click="fliterInbox('read')">read</button>
+    <button @click="fliterInbox('read')">send</button>
     
     
     </section>

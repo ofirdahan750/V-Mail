@@ -47,16 +47,13 @@ export default {
             const idx = (email) => email.id === emailId
             const foundMail = this.emails.findIndex(idx)
             this.emails[foundMail].isOpen = !this.emails[foundMail].isOpen
-            emailService.save(this.emails[foundMail]).then(this.loadEmails)
-
+            // emailService.save(this.emails[foundMail]).then(this.loadEmails)
         },
         setFilter(filterEmail) {
             this.filterBy = filterEmail
         },
         setMail(val) {
             return this.inboxOrSend = val
-            //  return 
-
         }
 
 
@@ -75,7 +72,7 @@ export default {
         countingRead() {
             let allReadedEmail = this.emails.filter(email => !email.isRead)
             let res = allReadedEmail.length / this.emails.length * 100
-            return res.toFixed(2)
+            return (res)? res.toFixed(2) : 0
         }
     },
 

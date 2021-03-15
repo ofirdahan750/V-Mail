@@ -42,13 +42,13 @@ function _createEmails() {
                 'from': utilService.makeName(), //NAME OF THE THE the sender
                 'title': utilService.makeTitle(), //title
                 'text': utilService.makeTxt(), //txt body
-                'year': utilService.randomDataYear(),//to-min random time unit
-                'mouth': utilService.randomDataMouth(),
-                'day': utilService.randomDataDay(),
-                'hour': utilService.randomDataHour(),
-                'min': utilService.randomDataMin(),
+                'year': utilService.randomIntFromInterval(2010,2020),//to-min random time unit
+                'mouth': utilService.randomIntFromInterval(1,12),
+                'day': utilService.randomIntFromInterval(1,28),
+                'hour': utilService.randomIntFromInterval(1,23),
+                'min': utilService.randomIntFromInterval(1,59),
                 'isRead': false,//IS THE MAIL READ,
-                'isOpen':false,
+                // 'isOpen':false,
                 'isInbox':true
             }
 
@@ -75,11 +75,6 @@ function getEmptyMail() {
         // 'from': utilService.makeName, //NAME OF THE THE the sender
         'title': '', //title
         'text': '', //txt body
-        'year': new Date().getUTCFullYear(),//to-min random time unit
-        'mouth': new Date().getUTCMonth() + 1,
-        'day': new Date().getUTCDate(),
-        'hour': new Date().getHours(),
-        'min': new Date().getUTCMinutes(),
         'isRead': true,//IS THE MAIL READ
         'isOpen':false,
         'isInbox':false
