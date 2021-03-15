@@ -10,7 +10,7 @@ export default {
     <email-details v-else :email="email" @click.native="openCurrMail(email.isRead,email.id)"/>
         <button @click="read(email.id)" :class="{'fas fa-envelope-open':!email.isRead,'far fa-envelope-open':email.isRead}"></button>
     <button class="fas fa-trash-alt" @click="remove(email.id)"></button>
-  <button><router-link class="fas fa-reply" :to="'/email/compose/'+email.id"></router-link></button> 
+    <router-link  :to="'/email/compose/'+email.id"><button class="fas fa-reply"></button> </router-link>
     </li>
 </ul>
 <h1 v-else>No email to show...</h1>

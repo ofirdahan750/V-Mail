@@ -8,7 +8,7 @@ font-face {
 
 /* header */
 .main-header {
-    background-color: #343942;
+    background-color: #4fc08d;
     width: 100%;
     height: 120px;
     
@@ -21,7 +21,7 @@ font-face {
     margin-top: 10px;
 }
 .header-warper {
-    background-color: #4f4e4e;
+    background-color: #4fc08d;
     border-bottom: 1px black solid;
 }
 .logo {
