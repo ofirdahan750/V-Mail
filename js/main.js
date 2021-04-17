@@ -8,7 +8,7 @@ const options = {
     <section>
         <app-header/>
         <user-msg/>
-        <router-view/>
+        <router-view class="main-app"/>
         <footer>        
             <section class="copyright">
             <i class="far fa-copyright"></i> COPYRIGHT 2020-All rights reserved <i class="far fa-copyright"></i>

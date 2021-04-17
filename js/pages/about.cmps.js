@@ -1,6 +1,6 @@
 export default {
     template: `
-    <section class="about flex">
+    <section class="about">
     <div class="stuff column"><img src="img/ofir.jpg" alt="">
         <h2>Ofir Dahan</h2>
             <h3>Digital Marketing and Website Development</h3>

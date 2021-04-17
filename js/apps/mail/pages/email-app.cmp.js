@@ -7,12 +7,11 @@ import emailBtn from '../cmps/email-btn.cmps.js'
 export default {
     template: `
      <section class="email-app">
-        <h1>welcome to P-mail</h1>
+        <h1>welcome to V-mail</h1>
         <email-status :countingRead="countingRead" />
         <email-filter @filter="setFilter"/>
-        <email-list :emails="showEmail" @remove="removeEmail" @read="markAsReadEmail" @openCurrMail="toggleEmailOpen" />
+        <email-list class="email-list" :emails="showEmail" @remove="removeEmail" @read="markAsReadEmail" @openCurrMail="toggleEmailOpen" />
         <email-btn @setmail="setMail"/>
-
     </section>
     `
     ,

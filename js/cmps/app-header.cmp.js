@@ -14,6 +14,3 @@ export default {
    </header>
     `
 }
-//todo:add logo-DONE
-//add link when reday
-//DEGISN
