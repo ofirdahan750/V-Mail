@@ -3,7 +3,7 @@ export default {
     template: `
     <section>
     <progress  :value="countingRead" max="100"></progress>
-    <div>{{countingRead}}%</div>
+    <div> {{countingRead}}%</div>
     </section>
 `
 ,

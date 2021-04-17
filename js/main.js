@@ -9,7 +9,11 @@ const options = {
         <app-header/>
         <user-msg/>
         <router-view/>
-        <footer> &copy; Coffeerights 2021</footer>
+        <footer>        
+            <section class="copyright">
+            <i class="far fa-copyright"></i> COPYRIGHT 2020-All rights reserved <i class="far fa-copyright"></i>
+        </section>
+    </footer>
     </section>
     `,
 
